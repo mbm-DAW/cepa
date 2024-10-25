@@ -1,0 +1,293 @@
+/* Estilos base para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #e9ecef;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del encabezado */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Contenedor principal del formulario */
+.formulario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+}
+
+/* Divisiones dentro del formulario */
+.formulario > div {
+    flex-basis: 48%;
+}
+
+/* Estilos de las etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para campos de texto, selects y fechas */
+input[type="text"],
+select,
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Personalización del select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+/* Estilos para el estado focus de los campos */
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+/* Contenedor del botón enviar */
+.enviarBoton {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Estilos del botón submit */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 30px auto 15px;
+    display: block;
+    width: auto;
+}
+
+/* Efectos hover y active del botón */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Estilos de mensajes de error */
+.error {
+    color: #dc3545;
+    margin-top: 15px;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: pre-line;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+.error p {
+    margin: 5px 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Estilos del footer con gradiente y efectos */
+footer {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea brillante superior del footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+    );
+}
+
+/* Estilos del texto del footer */
+footer p {
+    font-size: 0.95em;
+    opacity: 0.9;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Efecto hover en textos del footer */
+footer p:hover {
+    opacity: 1;
+}
+
+/* Efecto de brillo animado del footer */
+footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,0.05),
+            transparent
+    );
+    transform: skewX(-25deg);
+    animation: footerShine 8s infinite linear;
+}
+
+/* Animación del brillo del footer */
+@keyframes footerShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Estilos para la página de confirmación */
+.info-registro {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.info-registro p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+
+.id-alumno {
+    background: #e3f2fd;
+    color: #000000;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.centrado {
+    text-align: center;
+    color: #0077be;
+    font-size: 2em;
+    margin: 20px 0;
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .formulario,
+    .enviarBoton {
+        width: 90%;
+    }
+
+    .formulario > div {
+        flex-basis: 100%;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .info-registro {
+        width: 90%;
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .id-alumno {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+
+    .centrado {
+        font-size: 1.6em;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+}
